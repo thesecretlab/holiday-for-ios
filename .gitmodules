@@ -1,0 +1,9 @@
+[submodule "Externals/AFNetworking"]
+	path = Externals/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking
+[submodule "Externals/uicolor-utilities"]
+	path = Externals/uicolor-utilities
+	url = https://github.com/erica/uicolor-utilities
+[submodule "Externals/RSColorPicker"]
+	path = Externals/RSColorPicker
+	url = https://github.com/RSully/RSColorPicker

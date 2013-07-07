@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSColorPickerView.h"
+#import "HolidaySwipeView.h"
 
 @interface ViewController : UIViewController
+
+@property (weak) IBOutlet HolidaySwipeView* swipeView;
+@property (weak) IBOutlet RSColorPickerView* colorPicker;
 
 @end
