@@ -64,6 +64,7 @@
 		68FC022D178928600059C030 /* RSSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC021C178928600059C030 /* RSSelectionView.m */; };
 		68FC022F178928BA0059C030 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FC022E178928BA0059C030 /* QuartzCore.framework */; };
 		68FC0232178929CC0059C030 /* HolidaySwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC0231178929CC0059C030 /* HolidaySwipeView.m */; };
+		68FC0234178933350059C030 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FC0233178933350059C030 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		68FC022E178928BA0059C030 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		68FC0230178929CC0059C030 /* HolidaySwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HolidaySwipeView.h; sourceTree = "<group>"; };
 		68FC0231178929CC0059C030 /* HolidaySwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HolidaySwipeView.m; sourceTree = "<group>"; };
+		68FC0233178933350059C030 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68FC0234178933350059C030 /* CoreMotion.framework in Frameworks */,
 				68FC022F178928BA0059C030 /* QuartzCore.framework in Frameworks */,
 				68F70B06178920C300F45456 /* UIKit.framework in Frameworks */,
 				68F70B08178920C300F45456 /* Foundation.framework in Frameworks */,
@@ -190,6 +193,7 @@
 		68F70AF9178920C300F45456 = {
 			isa = PBXGroup;
 			children = (
+				68FC0233178933350059C030 /* CoreMotion.framework */,
 				68FC022E178928BA0059C030 /* QuartzCore.framework */,
 				68FC01F6178928600059C030 /* ColorPickerClasses */,
 				68F70B6C1789240000F45456 /* Color */,

@@ -10,12 +10,16 @@
 #import "Holiday.h"
 #import "RSColorPickerView.h"
 #import "HolidaySwipeView.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface ViewController () <RSColorPickerViewDelegate, HolidaySwipeViewDelegate> {
     Holiday* hol;
     UIColor* color;
     
     NSTimer* updateTimer;
+    
+    CMMotionManager* motion;
+    
 }
 
 @end
@@ -45,11 +49,32 @@
     self.swipeView.colors = hol.globes;
     
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateHoliday) userInfo:nil repeats:YES];
+    
+    motion = [[CMMotionManager alloc] init];
+    
+    [motion startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
+    
+        CMAcceleration acceleration = motion.userAcceleration;
+        
+        float accelerationMagnitude = sqrt(pow(acceleration.x, 2) + pow(acceleration.y, 2) + pow(acceleration.z, 2));
+        
+        if (accelerationMagnitude > 3) {
+            NSLog(@"Acceleration magnitude: %f", accelerationMagnitude);
+            [hol clearWithColor:[UIColor blackColor]];
+            self.swipeView.colors = hol.globes;
+        }
+        
+    }];
+    
+    
 }
+
+
 
 - (void) updateHoliday {
     [hol render];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

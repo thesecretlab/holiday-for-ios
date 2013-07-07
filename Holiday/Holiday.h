@@ -19,4 +19,6 @@
 
 - (void) render;
 
+- (void) clearWithColor:(UIColor*)color;
+
 @end

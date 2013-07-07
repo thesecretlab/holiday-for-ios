@@ -31,9 +31,7 @@
         
         [self setParameterEncoding:AFJSONParameterEncoding];
         
-        for (int i = 0; i < [Holiday numberOfGlobes]; i++) {
-            [_globes addObject:[UIColor blackColor]];
-        }
+        [self clearWithColor:[UIColor blackColor]];
         
     }
     return self;
@@ -45,6 +43,14 @@
     
     _globes[globeNumber] = color;
     
+}
+
+- (void) clearWithColor:(UIColor*)color {
+    [_globes removeAllObjects];
+    
+    for (int i = 0; i < [Holiday numberOfGlobes]; i++) {
+        [_globes addObject:color];
+    }
 }
 
 - (UIColor*) globe:(NSUInteger)globeNumber {
@@ -61,9 +67,9 @@
     NSDictionary* dict = @{@"lights":renderedStrings};
 
     [self putPath:@"/device/light/setlights" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success!");
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Fail!");
+        
     }];
 }
 
