@@ -11,6 +11,8 @@
 
 @implementation Holiday {
     NSMutableArray* _globes;
+    
+    NSDictionary* _lastSentData;
 
 }
 
@@ -67,12 +69,18 @@
     }
     
     NSDictionary* dict = @{@"lights":renderedStrings};
+    
+    // Send an update, if anything has changed
+    if ([dict isEqualToDictionary:_lastSentData] == NO) {
 
-    [self putPath:@"/device/light/setlights" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+        [self putPath:@"/device/light/setlights" parameters:dict success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            _lastSentData = dict;
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+    }
 }
 
 
