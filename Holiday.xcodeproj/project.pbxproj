@@ -65,6 +65,7 @@
 		68FC022F178928BA0059C030 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FC022E178928BA0059C030 /* QuartzCore.framework */; };
 		68FC0232178929CC0059C030 /* HolidaySwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FC0231178929CC0059C030 /* HolidaySwipeView.m */; };
 		68FC0234178933350059C030 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68FC0233178933350059C030 /* CoreMotion.framework */; };
+		68FC0236178938140059C030 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 68FC0235178938140059C030 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		68FC0230178929CC0059C030 /* HolidaySwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HolidaySwipeView.h; sourceTree = "<group>"; };
 		68FC0231178929CC0059C030 /* HolidaySwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HolidaySwipeView.m; sourceTree = "<group>"; };
 		68FC0233178933350059C030 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		68FC0235178938140059C030 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Holiday/Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 		68F70AF9178920C300F45456 = {
 			isa = PBXGroup;
 			children = (
+				68FC0235178938140059C030 /* Settings.bundle */,
 				68FC0233178933350059C030 /* CoreMotion.framework */,
 				68FC022E178928BA0059C030 /* QuartzCore.framework */,
 				68FC01F6178928600059C030 /* ColorPickerClasses */,
@@ -464,6 +467,7 @@
 				68F70B1C178920C300F45456 /* Default-568h@2x.png in Resources */,
 				68F70B22178920C300F45456 /* ViewController_iPhone.xib in Resources */,
 				68F70B25178920C300F45456 /* ViewController_iPad.xib in Resources */,
+				68FC0236178938140059C030 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,7 +645,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: SECRET LAB PTY. LTD.";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -649,6 +653,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "07316352-BA59-4112-8338-BD15BC4A9521";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

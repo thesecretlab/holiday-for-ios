@@ -11,7 +11,7 @@
 
 @interface Holiday : AFHTTPClient
 
-- (NSArray*) globes;
+@property (nonatomic, strong) NSArray* globes;
 
 - (void) setColor:(UIColor*)color forGlobe:(NSUInteger)globeNumber;
 

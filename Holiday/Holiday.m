@@ -14,12 +14,14 @@
 
 }
 
+@synthesize globes = _globes;
+
 + (NSUInteger)numberOfGlobes {
     return 50;
 }
 
-- (NSArray *)globes {
-    return _globes;
+- (void)setGlobes:(NSArray *)globes {
+    _globes = [NSMutableArray arrayWithArray:globes];
 }
 
 - (id)initWithBaseURL:(NSURL *)url
