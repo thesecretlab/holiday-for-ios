@@ -24,18 +24,22 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self applyTouch:[touches anyObject]];
+    for (UITouch* touch in touches)
+        [self applyTouch:touch];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self applyTouch:[touches anyObject]];    
+    for (UITouch* touch in touches)
+        [self applyTouch:touch];
 }
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self applyTouch:[touches anyObject]];    
+    for (UITouch* touch in touches)
+        [self applyTouch:touch];
 }
 
 - (void) applyTouch:(UITouch*) touch {
+    
     int colorBlockWidth = (int)(self.bounds.size.width / self.colors.count);
     
     float xCoord = [touch locationInView:self].x;
