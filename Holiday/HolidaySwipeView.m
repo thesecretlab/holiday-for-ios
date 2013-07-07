@@ -21,16 +21,27 @@
 
 - (void)awakeFromNib {
     
-    [self addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(dragged:)]];
-    
 }
 
-- (void) dragged:(UIPanGestureRecognizer*)pan {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self applyTouch:[touches anyObject]];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self applyTouch:[touches anyObject]];    
+}
+
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self applyTouch:[touches anyObject]];    
+}
+
+- (void) applyTouch:(UITouch*) touch {
     int colorBlockWidth = (int)(self.bounds.size.width / self.colors.count);
     
-    float xCoord = [pan locationInView:pan.view].x;
+    float xCoord = [touch locationInView:self].x;
     
     [self.delegate applyColourAtIndex:xCoord / colorBlockWidth];
+
 }
 
 - (void)setColors:(NSArray *)colors {

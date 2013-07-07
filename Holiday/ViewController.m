@@ -14,6 +14,8 @@
 @interface ViewController () <RSColorPickerViewDelegate, HolidaySwipeViewDelegate> {
     Holiday* hol;
     UIColor* color;
+    
+    NSTimer* updateTimer;
 }
 
 @end
@@ -27,7 +29,6 @@
 - (void)applyColourAtIndex:(NSUInteger)index {
     [hol setColor:color forGlobe:index];
     self.swipeView.colors = hol.globes;
-    [hol render];
 }
 
 - (void)viewDidLoad
@@ -37,13 +38,17 @@
     
     hol = [[Holiday alloc] initWithBaseURL:[NSURL URLWithString:@"http://lithia.local"]];
     
-    [hol setColor:[UIColor redColor] forGlobe:2];
-    
     [hol render];
     
     self.colorPicker.delegate = self;
     
     self.swipeView.colors = hol.globes;
+    
+    updateTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateHoliday) userInfo:nil repeats:YES];
+}
+
+- (void) updateHoliday {
+    [hol render];
 }
 
 - (void)didReceiveMemoryWarning
