@@ -20,7 +20,7 @@
 }
 
 - (void)awakeFromNib {
-    
+    self.multipleTouchEnabled = YES;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
